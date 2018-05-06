@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
+    script(src="/socket.io/socket.io.js")
+    script(src="javascripts/app.js")
+    script.
+      const name = prompt('Nom ?');
+      const socket = io();
+      setTimeout(() => socket.emit('newUser', 'Stephane'),2000);
+
+      //socket.emit('newUser','Stephane');
+      socket.on('welcome', data => console.log(data));
+      
+      //console.log(name);
+
+      //erreur 100 = infos
+      //erreur 400
+      //erreur 500 serveur

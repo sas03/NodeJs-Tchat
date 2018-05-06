@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  ul#messages
+
+  textarea(name="" cols="30" rows="10" type = "text" id="textMessage")
+  //input(type = "text" id="textMessage")  
+  button(type="submit").send envoyer
+
